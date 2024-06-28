@@ -5,6 +5,11 @@ databases:
     plan: free
 
 services:
+  - type: redis
+   name: cache
+   ipAllowList: [] # only allow internal connections
+   plan: free # optional (defaults to starter)
+   maxmemoryPolicy: allkeys-lfu 
   - type: web
     name: mysite
     runtime: ruby
@@ -21,3 +26,8 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
+      - key: redis://red-cpv4jm9u0jms73akcd7g:6379 # this must match the name of the environment variable used in production.rb
+        fromService:
+          type: redis
+          name: cache
+          property: connectionString
