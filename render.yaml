@@ -6,10 +6,10 @@ databases:
 
 services:
   - type: redis
-   name: cache
-   ipAllowList: [] # only allow internal connections
-   plan: free # optional (defaults to starter)
-   maxmemoryPolicy: allkeys-lfu 
+    name: cache
+    ipAllowList: [] # only allow internal connections
+    plan: free # optional (defaults to starter)
+    maxmemoryPolicy: allkeys-lfu 
   - type: web
     name: mysite
     runtime: ruby
