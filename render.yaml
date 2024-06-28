@@ -26,7 +26,7 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
-      - key: redis://red-cpv4jm9u0jms73akcd7g:6379 # this must match the name of the environment variable used in production.rb
+      - key: REDIS_URL # this must match the name of the environment variable used in production.rb
         fromService:
           type: redis
           name: cache
