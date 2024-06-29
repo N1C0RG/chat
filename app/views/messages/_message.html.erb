@@ -1,6 +1,11 @@
-<div>
-  <% unless message.room.is_private %>
-    <h6 class="name"> <%= message.user.email %> </h6>
-  <% end %>
-  <%= message.content %>
+
+<div class="box has-background-link mx-6" style="max-width: 15rem;">
+  <h6 class="has-text-black is-size-5"> <%= message.user.email%> </h6>
+  <p><%= message.content %></p>
 </div>
+<!--
+  <div class="box has-background-light mx-6 is-pulled-right" style="max-width: 15rem;">
+    <h6 class="has-text-black is-size-5"> <%= message.user.email%> </h6>
+    <p><%= message.content %></p>
+</div>
+-->

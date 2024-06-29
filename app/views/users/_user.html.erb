@@ -1,1 +1,5 @@
-<div> <%= link_to user.email, user %> </div>
+<div class="user user-<%= user.id %>">
+  <h3 class="title is-4">
+    <%= link_to user.email, user %>
+  </h3>
+</div>

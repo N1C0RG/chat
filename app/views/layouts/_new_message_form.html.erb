@@ -1,6 +1,19 @@
-<div class="form-group msg-form">
+<!--<div class="form-group msg-form">
   <%= form_with(model: [@single_room ,@message], remote: true, class: "d-flex" ) do |f| %>
     <%= f.text_field :content, id: 'chat-text', class: "form-control msg-content", autocomplete: 'off' %>
     <%= f.submit data: { disable_with: false }, class: "btn btn-primary" %>
+  <% end %>
+</div>-->
+
+<div class=" has-background-link py-6 px-6 is-flex-direction-column" style="width: 80%; position: fixed; bottom: 0;" >
+  <%= form_with(model: [@single_room ,@message], remote: true, class: "d-flex" ) do |f| %>
+    <div class="field is-grouped">
+      <p class="control is-expanded">
+        <%= f.text_field :content, id: 'chat-text', class: "input", autocomplete: 'off', placeholder: "mensaje"%>
+      </p>
+      <p class="control">
+        <%= f.submit data: { disable_with: false }, class: "button is-light is-responsive" %>
+      </p>            
+    </div>
   <% end %>
 </div>
